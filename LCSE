@@ -75,6 +75,30 @@ int Nodo::Obtienedato()
 
 
 
+void LSE::BorrarI()
+{
+    if(!Inicio)
+        cout<<"Lista Vacia"<<endl;
+    else
+        {
+            if(Inicio=Fin)
+                {
+                   
+                    Inicio=Fin=NULL;
+                }
+            else
+                {
+                    Nodo *hay=Inicio;
+                    Inicio=Inicio->Obtienesig();
+                    Fin->Obtienesig()=Inicio;
+                    delete hay;
+                }
+        }
+}
+
+
+
+
 int main(int argc, const char * argv[]) {
     
     LCSE A;
